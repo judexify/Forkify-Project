@@ -1,4 +1,5 @@
 import View from './View';
+
 import icons from 'url:../../img/icons.svg';
 
 class ResultsView extends View {
@@ -29,3 +30,8 @@ class ResultsView extends View {
 }
 
 export default new ResultsView();
+
+// SubClass.prototype.__proto__ === Parent.prototype
+
+// why export this?
+// You only ever need one results view

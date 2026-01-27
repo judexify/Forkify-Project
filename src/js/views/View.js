@@ -1,5 +1,9 @@
 import icons from 'url:../../img/icons.svg';
 
+// exporting immediately because
+//  we are not creating instances
+// of the view , we just want to use
+//  it as parent class of views
 export default class View {
   _data;
 
@@ -59,8 +63,3 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 }
-
-// exporting immediately because
-//  we are not creating instances
-// of the view , we just want to use
-//  it as parent class of views
