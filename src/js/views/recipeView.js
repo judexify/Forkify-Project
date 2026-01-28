@@ -1,13 +1,10 @@
 import View from './View';
-
 import Fraction from 'fraction.js';
 import icons from 'url:../../img/icons.svg';
 // console.log(Fraction);
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
-  _errorMessage = 'We Could not find that recipe. Please try another recipe';
-  _message = '';
 
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
@@ -99,3 +96,5 @@ class RecipeView extends View {
 }
 
 export default new RecipeView();
+// why export this?
+// You only ever need one results view
