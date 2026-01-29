@@ -19,6 +19,9 @@ const controlRecipes = async function () {
     // SPINNER
     recipeView.renderSpinner();
 
+    // Update results view to mark selected search result
+    resultsView.update(model.getSearchResultPage());
+
     // LOADING RECIPE
     await model.loadRecipe(id); //not returning anything thats why is not stored
 
@@ -58,15 +61,23 @@ const controlPagination = function (gotoPage) {
   paginationView.render(model.state.search);
 };
 
-const controlServings = function () {
+const controlServings = function (newServings) {
   // Update the recpe servings (in state)
-  model.updateServings(6);
+  model.updateServings(newServings);
 
   // update the recipe view
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
+};
+
+const controlAddBookmark = function () {
+  model.addBookMark(model.state.recipe);
+  console.log(model.state.recipe);
 };
 
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
