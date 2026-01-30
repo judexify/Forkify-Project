@@ -66,7 +66,7 @@ class RecipeView extends View {
 
             <div class="recipe__user-guranteed">
             </div>
-          <button class="btn--round btn--bookmark">
+          <button class="btn--round btn--bookmark${this._data.bookmarked ? '-fill' : ''}">
            <svg class="">
            <use href ="${icons}$icon-bookmark"></use>
            </svg> 
